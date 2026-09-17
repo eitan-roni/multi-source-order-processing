@@ -6,6 +6,7 @@ import com.eitan.orders.dto.target.TargetOrderDto;
 import com.eitan.orders.mapper.SourceAOrderMapper;
 import com.eitan.orders.mapper.SourceBOrderMapper;
 import com.eitan.orders.service.OrderProcessingService;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,12 +29,12 @@ public class OrderController {
     }
 
     @PostMapping("/source-a")
-    public TargetOrderDto processSourceAOrder(@RequestBody SourceAOrderDto source) {
+    public TargetOrderDto processSourceAOrder(@Valid @RequestBody SourceAOrderDto source) {
         return orderProcessingService.process(sourceAOrderMapper.map(source));
     }
 
     @PostMapping("/source-b")
-    public TargetOrderDto processSourceBOrder(@RequestBody SourceBOrderDto source) {
+    public TargetOrderDto processSourceBOrder(@Valid @RequestBody SourceBOrderDto source) {
         return orderProcessingService.process(sourceBOrderMapper.map(source));
     }
 }
