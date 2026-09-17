@@ -3,9 +3,11 @@ package com.eitan.orders.service;
 import com.eitan.orders.dto.target.TargetOrderDto;
 import com.eitan.orders.model.CanonicalOrder;
 import com.eitan.orders.model.CountryInfo;
+import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 
+@Service
 public class OrderProcessingService {
 
     private final CountryService countryService;

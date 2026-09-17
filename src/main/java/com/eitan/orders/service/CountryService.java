@@ -1,9 +1,11 @@
 package com.eitan.orders.service;
 
 import com.eitan.orders.model.CountryInfo;
+import org.springframework.stereotype.Service;
 
 import java.util.Map;
 
+@Service
 public class CountryService {
 
     private final Map<String, CountryInfo> countryInfoByCode = Map.of(

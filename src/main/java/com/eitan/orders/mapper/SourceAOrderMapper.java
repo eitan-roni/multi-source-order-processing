@@ -2,7 +2,9 @@ package com.eitan.orders.mapper;
 
 import com.eitan.orders.dto.sourcea.SourceAOrderDto;
 import com.eitan.orders.model.CanonicalOrder;
+import org.springframework.stereotype.Service;
 
+@Service
 public class SourceAOrderMapper {
 
     public CanonicalOrder map(SourceAOrderDto source) {
